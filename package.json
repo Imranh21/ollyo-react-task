@@ -12,9 +12,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
-    "react-dom": "^18.2.0",
-    "react-gesture-responder": "^2.1.0",
-    "react-grid-dnd": "^2.1.2"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

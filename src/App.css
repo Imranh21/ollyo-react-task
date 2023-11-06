@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  
 }
 
 .body {
@@ -11,7 +12,7 @@
 }
 
 .image-gallary {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   border-radius: 10px;
   border: 1px solid #ccc;
@@ -34,6 +35,9 @@
   background: none;
   cursor: pointer;
 }
+.header .action button:hover {
+  text-decoration: underline;
+}
 .header .action .checkbox {
   display: flex;
   align-items: center;
@@ -51,6 +55,46 @@
 }
 
 
+.custom-file-input {
+  min-width: 200px;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.file-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  margin: 0;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file-button svg {
+  width: 20px;
+}
+@media (max-width: 1280px) {
+  .image-gallary {
+    width: 90%;
+  }
+  .tasks-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .image-gallary {
     width: 90%;
@@ -62,10 +106,21 @@
 
 @media (max-width: 576px) {
   .image-gallary {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
   }
   .tasks-wrapper {
     grid-template-columns: 1fr;
+    grid-gap: 8px;
+    padding: 8px;
+  }
+  .task {
+    min-width: 140px !important;
+    min-height: 140px !important;
+  }
+  .custom-file-input {
+    min-width: 140px;
+    min-height: 140px;
   }
 }
 
@@ -103,7 +158,11 @@
   top: 0;
   left: 0;
 }
-
+.image-overlay input {
+  width: 20px;
+  height: 20px;
+  margin: 15px 10px;
+}
 .task {
   transition: transform 0.3s ease-in-out;
 }
@@ -136,7 +195,7 @@
   opacity: 0.5;
 }
 
-/* Additional style for checked items */
 .checkbox-container input[type="checkbox"]:checked {
   opacity: 1;
 }
+

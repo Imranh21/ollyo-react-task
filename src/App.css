@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  width: 100%;
+  background-color: aliceblue;
+  color: #000;
+  padding: 50px 0;
+}
+
+.image-gallary {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.header {
+  padding: 20px;
+  color: #000;
+  border-bottom: 1px solid #ccc;
+}
+.header .action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .action button {
+  border: none;
+  color: red;
+  background: none;
+  cursor: pointer;
+}
+.header .action .checkbox {
+  display: flex;
+  align-items: center;
+}
+.header .action .checkbox h3 {
+  margin-left: 10px;
+}
+.tasks-wrapper {
+  background-color: #fff;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .image-gallary {
+    width: 90%;
+  }
+  .tasks-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .image-gallary {
+    width: 100%;
+  }
+  .tasks-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tasks-wrapper .task:nth-child(1) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.task {
+  min-width: 200px;
+  min-height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.image-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.task {
+  transition: transform 0.3s ease-in-out;
+}
+.image-box {
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-box.hovered {
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+.checkbox-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.image-box:hover .checkbox-container {
+  opacity: 1;
+}
+
+.checkbox-container img {
+  opacity: 1;
+}
+
+.checkbox-container input[type="checkbox"]:not(:checked) ~ img {
+  opacity: 0.5;
+}
+
+/* Additional style for checked items */
+.checkbox-container input[type="checkbox"]:checked {
+  opacity: 1;
+}
